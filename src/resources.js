@@ -1,12 +1,11 @@
 const RESOURCE_TYPE = {
-    IMAGE: 'image',
+    IMAGE: 'image'
 }
-
 
 class ResourceLoader {
     _typeLoadersMap = {
         [RESOURCE_TYPE.IMAGE]: async ({src, width, height}) => {
-            return new Promise ((resolve, reject) => {
+            return new Promise((resolve, reject) => {
                 const image = new Image(width, height)
                 image.addEventListener('load', () => resolve(image))
                 image.addEventListener('error', (error) => reject(error))
@@ -14,6 +13,7 @@ class ResourceLoader {
             })
         }
     }
+
     async load(resource) {
         const loader = this._typeLoadersMap[resource.type]
         const loadedRes = await loader(resource)

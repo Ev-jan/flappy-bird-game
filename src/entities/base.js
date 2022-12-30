@@ -14,19 +14,19 @@ class Entity {
     }
 
     draw() {
-        this._spriteSheet.then(sprites => {
+        this._spriteSheet.then(sprite => {
             this._drawEngine.drawImage({
-                spriteSheet: sprites, 
+                spriteSheet: sprite, 
                 image: this._frames[this._frameIdx], 
                 x: this.x,
                 y: this.y,
-                width: this.width, 
+                width: this.width,
                 height: this.height
             })
         })
 
     }
     update(delta) {
-        this._frameIdx = (this._frameIdx + Math.ceil(delta)) % this._frames.length // ввести эту константу this._animationSpeed
+        this._frameIdx = (this._frameIdx + Math.ceil(delta)) % this._frames.length
     }
 }

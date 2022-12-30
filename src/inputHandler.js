@@ -1,11 +1,12 @@
 class InputHandler {
     eventHandlerMap = {}
 
-    constructor(eventHandlerConfig) {
-        this.eventHandlerConfig = eventHandlerConfig
+    constructor(eventHandlerMap) {
+        this._eventHandlerMap = eventHandlerMap
     }
+
     subscribe() {
-        Object.entries(this.eventHandlerMap).forEach(([name, handler]) => {
+        Object.entries(this.eventHandlerMap).forEach(([name, handler])=> {
             document.addEventListener(name, handler)
         })
     }
@@ -14,20 +15,32 @@ class InputHandler {
 class MouseInputHandler extends InputHandler {
     buttonIndexNameMap = {
         0: 'left',
-        1: 'middle',
-        2: 'right'
     }
 
     eventHandlerMap = {
         click: (event) => {
             const buttonName = this.buttonIndexNameMap[event.button]
-            const handler = this._eventHandlerConfig[buttonName]
-            if (handler) {
+            const handler = this._eventHandlerMap[buttonName]
+            if(handler) {
                 handler(event)
             }
-        },
+        }
     }
-    subscribe() {
-        super.subscribe()
+}
+
+class KeyBoardInputHandler extends InputHandler {
+    buttonIndexNameMap = {
+        38: 'ArrowUp',
+        32: 'space',
+    }
+
+    eventHandlerMap = {
+        keydown: (event) => {
+            const buttonName = this.buttonIndexNameMap[event.keyCode]
+            const handler = this._eventHandlerMap[buttonName]
+            if(handler) {
+                handler(event)
+            }
+        }
     }
 }

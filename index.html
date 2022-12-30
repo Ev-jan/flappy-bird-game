@@ -4,13 +4,26 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/styles/style.css" rel="stylesheet" type="text/css">
     <title>Flappy Bird</title>
 </head>
-<body>
-    <canvas id="game"></canvas>
+<body class = 'body'>
+    <header class="score-board">
+        <p class="score-board_text" id="count_current">Current</p>
+        <p class="score-board_text" id="count_best">Best</p>
+    </header>
+    <div class="canvas-background">
+        <canvas id="game"></canvas>
+        <button id="start">start</button>
+    </div>
     <script src="./src/config.js"></script>
     <script src="./src/entities/base.js"></script>
     <script src="./src/entities/bird.js"></script>
+    <script src="./src/entities/background.js"></script>
+    <script src="./src/entities/foreground.js"></script>
+    <script src="./src/entities/pipes.js"></script>
+    <script src="./src/entities/gameOverMessage.js"></script>
+    <script src="./src/entities/startMessage.js"></script>
     <script src="./src/drawEngine.js"></script>
     <script src="./src/physicsEngines.js"></script>
     <script src="./src/inputHandler.js"></script>
