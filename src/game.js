@@ -169,7 +169,6 @@ class Game {
             this._gameOverMessage.draw()
             this._startBtn.style.display = "flex"
             this._startBtn.addEventListener('click', (event)=>{window.location = '/'})
-
         }
 
         getReady() {
@@ -198,15 +197,15 @@ class Game {
                         speed: this._config.GAME_SPEED,
                         game: this
                     })
+
                     this._background.draw()
                     this._startMessage.draw()
                     this._getReadyListener = (event) => {
                         this.start()
                     }
-
                     this._canvas.addEventListener('click', this._getReadyListener)
-
                 }
+
                 else this.start()
         }
 }

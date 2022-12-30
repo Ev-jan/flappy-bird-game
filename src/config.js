@@ -1,12 +1,7 @@
 class Config {
-    gravity = 150
+    gravity = 26*2.5*3
     GAME_SPEED = 20
-    DEGREE = Math.PI/180
-
-    SCORE_BRONZE = 10
-    SCORE_SILVER = 20
-    SCORE_GOLD = 30
-    SCORE_PLATINUM = 50
+    DEGREE = Math.PI / 180
 
     canvas = {
         canvasId: 'game',
@@ -17,7 +12,7 @@ class Config {
     spritesheet = {
         width: 606,
         height: 428,
-        src: 'assets/spriteSheet.png',        
+        src: 'assets/spriteSheet.png',
     }
 
     background = {
@@ -28,10 +23,10 @@ class Config {
 
         frames: [
             {
-            x: 0,
-            y: 0,
-            w: 275,
-            h: 228,
+                x: 0,
+                y: 0,
+                w: 275,
+                h: 228,
             }
         ]
     }
@@ -43,10 +38,10 @@ class Config {
         height: 110,
         frames: [
             {
-            x: 276,
-            y: 3,
-            w: 222,
-            h: 110,
+                x: 276,
+                y: 3,
+                w: 222,
+                h: 110,
             }
         ]
     }
@@ -78,7 +73,7 @@ class Config {
         y: 150,
         width: 34,
         height: 26,
-        flapSpeed: 100,
+        flapSpeed: 26*2.5,
         frames: [
             {
                 x: 276,
